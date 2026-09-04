@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 type SideBarItem = {
   name: string,
@@ -6,24 +7,27 @@ type SideBarItem = {
   route: string
 }
 @Component({
-  imports: [],
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+  ],
   selector: 'app-side-bar',
   styleUrl: './side-bar.css',
   templateUrl: './side-bar.html',
 })
 export class SideBar {
+  itemClicked = output<void>();
 
+  constructor(
+    private router: Router) {
+
+  }
 
   sideBarItems: SideBarItem[] = [
     {
-      name: "Home",
-      icon: "home.png",
-      route: "/"
-    },
-    {
       name: "Experience",
       icon: "experience.png",
-      route: "/experience"
+      route: "./experiences"
     },
     {
       name: "Projects",
@@ -33,7 +37,7 @@ export class SideBar {
     {
       name: "Certifications",
       icon: "certificate.png",
-      route: "/certifications"
+      route: "/certificates"
     },
     {
       name: "Gears",
@@ -43,7 +47,12 @@ export class SideBar {
     {
       name: "Blogs",
       icon: "blogs.png",
-      route: "/"
+      route: "/blogs"
     }
   ]
+
+  home(){
+    this.router.navigate(['/']);
+    this.itemClicked.emit();
+  }
 }

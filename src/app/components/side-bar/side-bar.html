@@ -3,15 +3,20 @@
   <div class="space-y-2">
     <!-- Desktop Title (Hidden on mobile since top header handles it) -->
     <div class="hidden md:flex items-center cursor-pointer mb-8 hover:bg-gray-100 p-2 rounded-md font-medium">
-      <span>Ricky Boy De Gracia</span>
+      <span (click)="home()">Ricky Boy De Gracia</span>
     </div>
 
     @for (item of sideBarItems; track $index) {
-      <div 
-        class="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2.5 rounded-md text-gray-700 hover:text-black">
+      <a 
+        [routerLink]="item.route" 
+        routerLinkActive="font-semibold text-black bg-gray-100" 
+        [routerLinkActiveOptions]="{ exact: item.route === '/' }"
+        (click)="itemClicked.emit()"
+        class="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2.5 rounded-md text-gray-700 hover:text-black transition-colors">
+        
         <img [src]="item.icon" class="w-5 h-5" [alt]="item.name"/>
         <span class="text-base">{{ item.name }}</span>
-      </div>
+      </a>
     }
   </div>
 
