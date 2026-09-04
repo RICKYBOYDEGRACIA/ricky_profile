@@ -15,6 +15,9 @@ type SideBarItem = {
   selector: 'app-side-bar',
   styleUrl: './side-bar.css',
   templateUrl: './side-bar.html',
+  host: {
+    class: 'block h-full' // Forces the <app-side-bar> element to take full height
+  }
 })
 export class SideBar {
   itemClicked = output<void>();

@@ -1,9 +1,12 @@
 <div class="flex flex-col h-full justify-between">
-  <!-- Top Items -->
-  <div class="space-y-2">
-    <!-- Desktop Title (Hidden on mobile since top header handles it) -->
-    <div class="hidden md:flex items-center cursor-pointer mb-8 hover:bg-gray-100 p-2 rounded-md font-medium">
-      <span (click)="home()">Ricky Boy De Gracia</span>
+  
+  <!-- Top Section (flex-1 forces it to take up all remaining height) -->
+  <div class="flex-1 space-y-2">
+    <!-- Desktop Title -->
+    <div 
+      (click)="home()" 
+      class="hidden md:flex items-center cursor-pointer mb-8 hover:bg-active hover:text-active-text p-2 rounded-md font-medium transition-colors">
+      <span>Ricky Boy De Gracia</span>
     </div>
 
     @for (item of sideBarItems; track $index) {
@@ -19,26 +22,29 @@
     }
   </div>
 
-  <!-- Bottom Theme Toggle -->
-  <div class="absolute bottom-5 border border-line p-2 rounded-full flex gap-4 items-center justify-center w-fit transition-colors">
-    
-    <!-- Dark Mode Icon -->
-    <img 
-      src="dark-mode.png" 
-      (click)="switchTheme('dark', $event)" 
-      class="w-4 h-4 cursor-pointer transition-opacity hover:opacity-100" 
-      [class.opacity-100]="themeService.currentTheme() === 'dark'"
-      [class.opacity-50]="themeService.currentTheme() === 'light'"
-      alt="Dark mode">
+  <!-- Bottom Theme Toggle (Pushed down naturally by flex layout) -->
+  <div class="pt-6 mt-auto">
+    <div class="border border-line p-2 rounded-full flex gap-4 items-center justify-center w-fit transition-colors">
+      
+      <!-- Dark Mode Icon -->
+      <img 
+        src="dark-mode.png" 
+        (click)="switchTheme('dark', $event)" 
+        class="w-4 h-4 cursor-pointer transition-opacity hover:opacity-100" 
+        [class.opacity-100]="themeService.currentTheme() === 'dark'"
+        [class.opacity-50]="themeService.currentTheme() === 'light'"
+        alt="Dark mode">
 
-    <!-- Light Mode Icon -->
-    <img 
-      src="light-mode.png" 
-      (click)="switchTheme('light', $event)" 
-      class="w-4 h-4 cursor-pointer transition-opacity hover:opacity-100" 
-      [class.opacity-100]="themeService.currentTheme() === 'light'"
-      [class.opacity-50]="themeService.currentTheme() === 'dark'"
-      alt="Light mode">
+      <!-- Light Mode Icon -->
+      <img 
+        src="light-mode.png" 
+        (click)="switchTheme('light', $event)" 
+        class="w-4 h-4 cursor-pointer transition-opacity hover:opacity-100" 
+        [class.opacity-100]="themeService.currentTheme() === 'light'"
+        [class.opacity-50]="themeService.currentTheme() === 'dark'"
+        alt="Light mode">
 
+    </div>
   </div>
+
 </div>
