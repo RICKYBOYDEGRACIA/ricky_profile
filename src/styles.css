@@ -1,1 +1,55 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: var(--bg-primary); /** This is for the main background color */
+  --color-active: var(--bg-active); /** This is for focused/active background color */
+  --color-primary-text: var(--text-primary); /** This is for focused/active text color */
+  --color-secondary-text: var(--text-secondary);
+  --color-active-text: var(--text-active); /** This is for the main text color */
+  --color-line: var(--border-color); /** This is for the border color */
+}
+
+/* Base / Light Mode Variables */
+:root {
+  --bg-primary: #ffffff; 
+  --bg-active: #f3f4f6;  
+  --text-active: #000000;
+  --text-primary: #111827; 
+  --text-secondary: #4b5563;
+  --border-color: #e5e7eb;
+}
+
+/* Dark Mode Overrides */
+.dark {
+  --bg-primary: #1a1b1d;
+  --bg-active: #202225;
+  --text-active: #ffffff;
+  --text-primary: #dde7f1;
+  --text-secondary: #9ca3af;
+  --border-color: #282c31;
+
+}
+
+/* Disable default cross-fade for view transitions */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Ensure the new snapshot layer sits on top during transition */
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+/* Ensure the old snapshot layer sits below */
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+/* Global body styling using CSS variables */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}

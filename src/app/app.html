@@ -1,6 +1,6 @@
 <div class="min-h-screen flex flex-col md:flex-row">
   <!-- Top Navigation Header (Mobile Only) -->
-  <header class="flex md:hidden items-center justify-between p-4 border-b border-gray-200 bg-white sticky top-0 z-20">
+  <header class="flex md:hidden items-center justify-between p-4 border-b border-line sticky top-0 z-20">
     <span class="font-medium text-lg">Ricky Boy De Gracia</span>
     <button (click)="toggleMenu()" class="p-2 text-gray-600 hover:text-black focus:outline-none" aria-label="Toggle Menu">
       @if (!isMenuOpen()) {
@@ -17,7 +17,7 @@
 
   <!-- Sidebar (Overlay on Mobile, Column on Desktop) -->
   <aside 
-    class="fixed inset-x-0 top-[57px] bottom-0 bg-white z-10 p-6 flex flex-col justify-between transition-all duration-200 ease-in-out md:static md:top-auto md:w-[250px] md:min-h-screen md:border-r md:border-gray-200 md:flex"
+    class="fixed inset-x-0 top-[57px] bottom-0 z-10 p-6 flex flex-col justify-between transition-all duration-200 ease-in-out md:static md:top-auto md:w-[250px] md:min-h-screen md:border-r md:border-line md:flex"
     [class.hidden]="!isMenuOpen()"
     [class.flex]="isMenuOpen()">
     
@@ -25,7 +25,7 @@
   </aside>
 
   <!-- Main Content -->
-  <main class="flex-1 p-4 md:p-6">
+  <main class="flex-1 p-4 md:p-6" [class.hidden]="isMenuOpen()" [class.block]="!isMenuOpen()">
     <router-outlet></router-outlet>
   </main>
 </div>

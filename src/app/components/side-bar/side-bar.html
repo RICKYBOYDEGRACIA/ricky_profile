@@ -9,11 +9,10 @@
     @for (item of sideBarItems; track $index) {
       <a 
         [routerLink]="item.route" 
-        routerLinkActive="font-semibold text-black bg-gray-100" 
+        routerLinkActive="font-semibold bg-active text-active-text" 
         [routerLinkActiveOptions]="{ exact: item.route === '/' }"
         (click)="itemClicked.emit()"
-        class="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2.5 rounded-md text-gray-700 hover:text-black transition-colors">
-        
+        class="flex items-center gap-3 cursor-pointer hover:bg-active p-2.5 rounded-md text-color-primary hover:text-active-text transition-colors">
         <img [src]="item.icon" class="w-5 h-5" [alt]="item.name"/>
         <span class="text-base">{{ item.name }}</span>
       </a>
@@ -21,8 +20,25 @@
   </div>
 
   <!-- Bottom Theme Toggle -->
-  <div class="absolute bottom-5 border border-gray-300 p-2 rounded-full flex gap-4 items-center justify-center w-fit mt-6">
-    <img src="dark-mode.png" class="w-4 h-4 cursor-pointer" alt="Dark mode">
-    <img src="light-mode.png" class="w-4 h-4 cursor-pointer" alt="Light mode">
+  <div class="absolute bottom-5 border border-line p-2 rounded-full flex gap-4 items-center justify-center w-fit transition-colors">
+    
+    <!-- Dark Mode Icon -->
+    <img 
+      src="dark-mode.png" 
+      (click)="switchTheme('dark', $event)" 
+      class="w-4 h-4 cursor-pointer transition-opacity hover:opacity-100" 
+      [class.opacity-100]="themeService.currentTheme() === 'dark'"
+      [class.opacity-50]="themeService.currentTheme() === 'light'"
+      alt="Dark mode">
+
+    <!-- Light Mode Icon -->
+    <img 
+      src="light-mode.png" 
+      (click)="switchTheme('light', $event)" 
+      class="w-4 h-4 cursor-pointer transition-opacity hover:opacity-100" 
+      [class.opacity-100]="themeService.currentTheme() === 'light'"
+      [class.opacity-50]="themeService.currentTheme() === 'dark'"
+      alt="Light mode">
+
   </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, output } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { Theme, ThemeService } from '../../services/theme';
 
 type SideBarItem = {
   name: string,
@@ -19,7 +20,9 @@ export class SideBar {
   itemClicked = output<void>();
 
   constructor(
-    private router: Router) {
+    private router: Router,
+    public themeService: ThemeService
+  ) {
 
   }
 
@@ -54,5 +57,9 @@ export class SideBar {
   home(){
     this.router.navigate(['/']);
     this.itemClicked.emit();
+  }
+
+  switchTheme(theme: Theme, event: MouseEvent) {
+    this.themeService.toggleThemeWithAnimation(theme, event);
   }
 }
