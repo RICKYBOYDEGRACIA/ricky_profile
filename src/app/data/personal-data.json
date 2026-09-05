@@ -1,0 +1,112 @@
+{
+  "basics": {
+    "name": "Ricky Boy De Gracia",
+    "label": "Frontend Web Developer | Software Engineer",
+    "email": "ricksdegracia@gmail.com",
+    "location": {
+      "city": "Pasig",
+      "country": "Philippines"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://linkedin.com/in/ricky-boy-de-gracia-4ab87a232"
+      }
+    ],
+    "summary": "Frontend Web Developer with nearly 4 years of hands-on experience crafting innovative digital solutions for global health access at reach52. Specializes in building and maintaining modern frontend applications using Angular, React.js, and Tailwind CSS. Once tasked to create a reusable custom UI component library and collaborating seamlessly in Jira/Bitbucket agile environments."
+  },
+  "skills": [
+    {
+      "category": "Frontend Development",
+      "items": [
+        "Angular",
+        "React.js",
+        "JavaScript (ES6+)",
+        "TypeScript",
+        "HTML5",
+        "CSS3/SASS",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "category": "Developer Tools & Workflow",
+      "items": [
+        "Bitbucket",
+        "Git",
+        "GitHub",
+        "Jira",
+        "Webpack",
+        "NPM",
+        "RESTful APIs"
+      ]
+    },
+    {
+      "category": "Enterprise & Platforms",
+      "items": [
+        "Odoo ERP Framework",
+        "Component Library Architecture"
+      ]
+    },
+    {
+      "category": "Practices & Methodologies",
+      "items": [
+        "Agile/Scrum",
+        "Component-Driven Development",
+        "Responsive Web Design",
+        "UI/UX Implementation"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "reach52 (Singapore)",
+      "position": "Junior Engineer, Frontend",
+      "location": "Remote | Pasig, Philippines",
+      "startDate": "2023-01",
+      "endDate": "Present",
+      "setup": "Full Time",
+      "highlights": [
+        "Develop and maintain core frontend web applications supporting global health access digital platforms.",
+        "Implemented a custom UI component library using Angular and Tailwind CSS, standardizing reusable UI components across internal teams and speeding up development.",
+        "Leveraged AngularJS, React.js, and TypeScript to build responsive, accessible, and high-performance web user interfaces.",
+        "Integrated RESTful API services with Reactive Forms and custom validation pipelines to ensure seamless data synchronization across mobile and web environments.",
+        "Managed code repositories, version control, and sprint tasks using Bitbucket, Git, and Jira in an Agile development environment.",
+        "Collaborated in Jira/Bitbucket Agile sprints, performing peer code reviews and driving component-driven architecture best practices."
+      ]
+    },
+    {
+      "company": "reach52 (Singapore)",
+      "position": "Junior Engineer, Frontend",
+      "location": "Remote | Pasig, Philippines",
+      "startDate": "2022-09",
+      "endDate": "2022-12",
+      "setup": "Intern",
+      "highlights": [
+        "Assisted senior developers in building and bug-fixing frontend modules using HTML, CSS, JavaScript, and Bitbucket.",
+        "Implemented UI components and performed cross-browser testing to ensure optimal responsive design."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Angular & Tailwind Custom UI Component Library",
+      "organization": "reach52",
+      "type": "Professional Reference",
+      "description": "Developed a centralized Angular and Tailwind CSS component library to replace legacy Angular Material implementations across company web applications. Standardized company design guidelines by engineering accessible, fully custom form controls (inputs, radio buttons, checkboxes, alerts, modals) with built-in branding, responsive layouts, and consistent spacing. Eliminated technical debt and reduced CSS override bloat, improving render performance and accelerating feature delivery across all product forms."
+    },
+    {
+      "name": "DHIS2 Data Integration & Payload Pipeline",
+      "organization": "reach52",
+      "description": "Built custom integration logic to transform raw immunization and aggregate health records into DHIS2-compliant DataValueSets payloads. Developed period-calculation algorithms in TypeScript to convert calendar dates into DHIS2 custom weekly/monthly structures. Integrated DHIS2 RESTful APIs to handle dataset future-period rules, payload validation, and automated sync error handling."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Pamantasan ng Lungsod ng Pasig",
+      "degree": "Bachelor of Science in Information Technology",
+      "location": "Pasig, Philippines",
+      "startDate": "2018",
+      "endDate": "2022"
+    }
+  ]
+}
