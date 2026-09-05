@@ -1,1 +1,42 @@
-<p>experiences-page works!</p>
+<div class="p-4 rounded-lg w-full h-screen flex flex-col items-center">
+  <div class="w-[100%] md:w-[90%] lg:w-[65] xl:w-[50%]">
+    <div class="mb-10">
+      <h1 class="text-xl font-semibold">Experience</h1>
+      <p class="text-justify">{{ basics.summary }}</p>
+    </div>
+    <div class="grid grid-cols-1">
+      @for (item of experiences; track $index; let last = $last) {
+        <div class="flex items-start gap-6 relative">
+          <div class="flex flex-col items-center self-stretch shrink-0">
+            <div
+              class="border border-line p-3 text-sm rounded-lg bg-primary z-10 font-medium text-main"
+            >
+              {{ item.header }}
+            </div>
+            @if (!last) {
+              <div class="w-px bg-line flex-1 my-2"></div>
+            }
+          </div>
+          <div class="flex flex-col gap-3 flex-1 pb-6">
+            <h1 class="border-b border-line font-semibold text-lg pb-1 text-main">
+              {{ item.jobTitle }}
+            </h1>
+
+            <div class="flex flex-col text-secondary">
+              <div class="text-xs italic">{{ item.setup }}</div>
+              <div class="text-xs">{{ item.combinedYear }}</div>
+            </div>
+
+            <div class="text-sm text-justify text-secondary leading-relaxed">
+              <ul class="list-disc list-inside space-y-1">
+                @for (highlights of item.highligths; track $index) {
+                  <li>{{ highlights }}</li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
