@@ -26,6 +26,7 @@ type Experience = {
   yearEnded?: string,
   combinedYear?: string,
   setup: string,
+  stack: string[],
 }
 @Component({
   imports: [
@@ -41,7 +42,6 @@ export class ExperiencesPage {
   basics = this.myData.basics;
   constructor(
   ){
-    console.log(this.myData)
   }
 
   experiences : Experience[] = this.myData.experience.map((item) => ({
@@ -58,5 +58,6 @@ export class ExperiencesPage {
     yearEnded: item.endDate,
     combinedYear: `${item.startDate} - ${item.endDate}`,
     setup: item.setup,
+    stack: item.stack,
   }))
 }

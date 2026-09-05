@@ -72,6 +72,16 @@
         "Integrated RESTful API services with Reactive Forms and custom validation pipelines to ensure seamless data synchronization across mobile and web environments.",
         "Managed code repositories, version control, and sprint tasks using Bitbucket, Git, and Jira in an Agile development environment.",
         "Collaborated in Jira/Bitbucket Agile sprints, performing peer code reviews and driving component-driven architecture best practices."
+      ],
+      "stack": [
+        "npm",
+        "angular",
+        "typescript",
+        "html",
+        "css",
+        "git",
+        "tailwind",
+        "bitbucket"
       ]
     },
     {
@@ -84,6 +94,17 @@
       "highlights": [
         "Assisted senior developers in building and bug-fixing frontend modules using HTML, CSS, JavaScript, and Bitbucket.",
         "Implemented UI components and performed cross-browser testing to ensure optimal responsive design."
+      ],
+      "stack": [
+        "npm",
+        "angular",
+        "typescript",
+        "html",
+        "css",
+        "git",
+        "bitbucket",
+        "reactjs",
+        "github"
       ]
     }
   ],
