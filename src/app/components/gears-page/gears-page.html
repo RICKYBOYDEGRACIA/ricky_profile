@@ -1,1 +1,36 @@
-<p>gears-page works!</p>
+<div class="p-4 rounded-lg w-full h-screen flex flex-col items-center">
+  <div class="w-[100%] md:w-[90%] lg:w-[65] xl:w-[50%]">
+    <div class="mb-10">
+      <h1 class="text-xl font-semibold">Gears</h1>
+      <p class="text-sm text-justify">A curated showcase of the everyday hardware driving my development workflow and productivity—from ergonomic peripherals and multi-device inputs to clear audio and eye-care displays.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-15">
+      @for (item of gears; track $index) {
+        <a href="{{ item.link }}" target="_blank">
+          <div class="flex flex-col gap-4">
+            <!-- <div class=""> -->
+              <h1 class="text-lg">{{ item.name }}</h1>
+            <!-- </div> -->
+            <div class="flex flex-col items-center gap-6 w-full max-w-2xl mx-auto place-items-center">
+              <!-- Image: Fluid on mobile, fixed max size on desktop -->
+              <img
+                [src]="item.imagePath"
+                [alt]="item.description"
+                class="w-full max-w-xs md:max-w-sm h-auto object-contain transition-transform duration-300 ease-in-out hover:scale-105"
+              />
+
+              <!-- Features List: Stretches smoothly within parent bounds -->
+              <ul class="list-disc list-outside ml-4 space-y-2 w-full">
+                @for (feature of item.features; track $index) {
+                  <li class="text-xs text-secondary leading-relaxed text-justify italic">
+                    {{ feature }}
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</div>
