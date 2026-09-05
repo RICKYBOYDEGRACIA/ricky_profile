@@ -1,23 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
-type Experience = {
-  title: string;
-  company: string;
-  startEndDate: string;
-};
-type TechStack = {
-  path: string;
-  alt: string;
-  tooltip?: string;
-};
-
-type Gear = {
-  name: string;
-  description: string;
-  imagePath: string;
-  link: string;
-};
+import { Experience, TechStack, Gear } from '../../data/interfaces/common';
 @Component({
   imports: [],
   selector: 'app-home-page',
