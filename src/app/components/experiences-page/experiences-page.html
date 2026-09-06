@@ -21,6 +21,12 @@
             <h1 class="border-b border-line font-semibold text-lg pb-1 text-main">
               {{ item.jobTitle }}
             </h1>
+            
+              <div class="flex mt-0 justify-end gap-2">
+                @for(stack of item.stack; track $index){
+                <p class="text-xs font-semibold hover:font-bold hover:cursor-pointer">{{stack}}</p> 
+                }
+              </div>
 
             <div class="flex flex-col text-secondary">
               <div class="text-xs italic">{{ item.setup }}</div>

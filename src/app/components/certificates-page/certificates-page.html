@@ -1,1 +1,33 @@
-<p>certificates-page works!</p>
+<div class="p-4 rounded-lg w-full h-screen flex flex-col items-center">
+  <div class="w-[100%] md:w-[90%] lg:w-[65] xl:w-[50%]">
+    <div class="mb-10">
+      <h1 class="text-xl font-semibold">Certifications</h1>
+      <p class="text-sm text-justify">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+    </div>
+    <div class="flex flex-col gap-8">
+      @for (group of groupedCertificates; track group[0]) {
+        <div class="flex flex-col gap-4 ">
+          
+          <!-- Group Category Header -->
+          <h3 class="text-lg font-bold text-main border-b border-line pb-1 uppercase tracking-wider">
+            {{ group[0] }}
+          </h3>
+
+          <!-- Grid of Certificates in this Category -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            @for (item of group[1]; track $index) {
+              <div class="border border-line rounded-lg p-4 flex items-center gap-3 bg-primary transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer">
+                <img [src]="item.iconImage" [alt]="item.name" class="w-8 h-8 object-contain" />
+                <div>
+                  <h4 class="font-semibold text-sm text-main">{{ item.name }}</h4>
+                  <p class="text-xs text-secondary">{{ item.description }}</p>
+                </div>
+              </div>
+            }
+          </div>
+
+        </div>
+      }
+    </div>
+  </div>
+</div>
