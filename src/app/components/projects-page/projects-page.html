@@ -1,1 +1,101 @@
-<p>projects-page works!</p>
+<div class="p-4 rounded-lg w-full min-h-screen flex flex-col items-center">
+  <div class="w-full md:w-[90%] lg:w-[65%] xl:w-[50%] flex flex-col gap-8">
+    
+    <!-- Page Header & Filter Tabs -->
+    <div class="flex flex-col gap-4 border-b border-line pb-6">
+      <div>
+        <h1 class="text-2xl font-bold text-main">Projects</h1>
+        <p class="text-sm text-secondary mt-1">
+          A collection of featured engineering deliverables, internal systems, and active builds.
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex items-center gap-2 pt-2">
+        <button 
+          (click)="setFilter('all')"
+          [class.bg-main]="activeFilter() === 'all'"
+          [class.primary-text]="activeFilter() === 'all'"
+          [class.font-bold]="activeFilter() === 'all'"
+          [class.text-secondary]="activeFilter() !== 'all'"
+          class="text-xs px-3 py-1.5 rounded-lg border border-line transition-all duration-200 hover:border-secondary cursor-pointer">
+          All
+        </button>
+        
+        <button 
+          (click)="setFilter('professional')"
+          [class.bg-main]="activeFilter() === 'professional'"
+          [class.primary-text]="activeFilter() === 'professional'"
+          [class.font-bold]="activeFilter() === 'professional'"
+          [class.text-secondary]="activeFilter() !== 'professional'"
+          class="text-xs px-3 py-1.5 rounded-lg border border-line transition-all duration-200 hover:border-secondary cursor-pointer">
+          Professional
+        </button>
+        
+        <button 
+          (click)="setFilter('personal')"
+          [class.bg-main]="activeFilter() === 'personal'"
+          [class.primary-text]="activeFilter() === 'personal'"
+          [class.font-bold]="activeFilter() === 'personal'"
+          [class.text-secondary]="activeFilter() !== 'personal'"
+          class="text-xs px-3 py-1.5 rounded-lg border border-line transition-all duration-200 hover:border-secondary cursor-pointer">
+          Personal
+        </button>
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 gap-6">
+      @for (project of filteredProjects(); track project.id) {
+        <div class="group border border-line rounded-xl p-6 bg-primary hover:border-secondary transition-all duration-200 flex flex-col justify-between gap-4">
+          
+          <div class="flex flex-col gap-2">
+            <!-- Header Badge & Category -->
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded border border-line text-secondary bg-active">
+                {{ project.category }}
+              </span>
+              @if (project.isFeatured) {
+                <span class="text-xs text-secondary italic">Featured Build</span>
+              }
+            </div>
+
+            <!-- Title -->
+            <h2 class="text-lg font-bold text-main group-hover:text-secondary transition-colors duration-200">
+              {{ project.title }}
+            </h2>
+
+            <!-- Description -->
+            <p class="text-sm text-secondary leading-relaxed text-justify">
+              {{ project.description }}
+            </p>
+          </div>
+
+          <!-- Tech Stack Tags -->
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-line/50">
+            @for (tag of project.tags; track $index) {
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-active border border-line text-secondary">
+                #{{ tag }}
+              </span>
+            }
+          </div>
+
+        </div>
+      } @empty {
+        <!-- Placeholder Empty State (When Personal filter is selected or no projects exist) -->
+        <div class="border border-dashed border-line rounded-xl p-8 flex flex-col items-center text-center gap-3 bg-primary/50">
+          <div class="p-3 rounded-full bg-active border border-line">
+            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 4a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2h4zm0 0R2 2 0 012 2v14a2 2 0 01-2 2h-4a2 2 0 01-2-2V6a2 2 0 012-2h4z"></path>
+            </svg>
+          </div>
+          <h3 class="text-base font-semibold text-main">Personal Lab Under Construction</h3>
+          <p class="text-xs text-secondary max-w-sm leading-relaxed">
+            I am currently crafting new personal side projects and experimentation suites. Check back soon for open-source repositories!
+          </p>
+        </div>
+      }
+    </div>
+
+  </div>
+</div>
