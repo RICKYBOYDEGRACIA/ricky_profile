@@ -4,9 +4,8 @@
   <div class="flex-1 space-y-2">
     <!-- Desktop Title -->
     <div 
-      (click)="home()" 
       class="hidden md:flex items-center cursor-pointer mb-8 hover:bg-active hover:text-active-text p-2 rounded-md font-medium transition-colors">
-      <span>Ricky Boy De Gracia</span>
+      <span (click)="home()">Ricky Boy De Gracia</span>
     </div>
 
     @for (item of sideBarItems; track $index) {
