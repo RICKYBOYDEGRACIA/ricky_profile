@@ -1,7 +1,7 @@
 <div class="h-screen w-screen flex flex-col md:flex-row overflow-hidden bg-primary">
   <!-- Top Navigation Header (Mobile Only) -->
   <header class="flex md:hidden items-center justify-between p-4 border-b border-line bg-primary sticky top-0 z-30 shrink-0">
-    <span class="font-medium text-lg">Ricky Boy De Gracia</span>
+    <span class="font-medium text-lg" (click)="home()">Ricky Boy De Gracia</span>
     <button (click)="toggleMenu()" class="p-2 text-gray-600 hover:text-black focus:outline-none" aria-label="Toggle Menu">
       @if (!isMenuOpen()) {
         <div class="hover:cursor-pointer">
