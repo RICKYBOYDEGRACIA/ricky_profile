@@ -1,15 +1,15 @@
 <div class="p-4 rounded-lg w-full h-screen flex flex-col items-center">
-  <div class="w-[100%] md:w-[90%] lg:w-[65] xl:w-[50%]">
+  <div class="w-[100%] md:w-[90%] lg:w-[65%] xl:w-[50%]">
     <div class="mb-10">
       <h1 class="text-xl font-semibold">Experience</h1>
       <p class="text-justify">{{ basics.summary }}</p>
     </div>
     <div class="grid grid-cols-1">
       @for (item of experiences; track $index; let last = $last) {
-        <div class="flex items-start gap-6 relative">
+        <div class="flex items-start gap-6 relative min-w-0">
           <div class="flex flex-col items-center self-stretch shrink-0">
             <div
-              class="border border-line p-3 text-sm rounded-lg bg-primary z-10 font-medium text-main"
+              class="border border-line p-3 text-sm rounded-lg bg-primary z-10 font-medium text-main shrink-0"
             >
               {{ item.header }}
             </div>
@@ -17,12 +17,12 @@
               <div class="w-px bg-line flex-1 my-2"></div>
             }
           </div>
-          <div class="flex flex-col gap-3 flex-1 pb-6">
+          <div class="flex flex-col gap-3 flex-1 pb-6 min-w-0">
             <h1 class="border-b border-line font-semibold text-lg pb-1 text-main">
               {{ item.jobTitle }}
             </h1>
             
-              <div class="flex mt-0 justify-end gap-2">
+              <div class="flex flex-wrap mt-0 justify-end gap-2 md:flex">
                 @for(stack of item.stack; track $index){
                 <p class="text-xs font-semibold hover:font-bold hover:cursor-pointer">{{stack}}</p> 
                 }
