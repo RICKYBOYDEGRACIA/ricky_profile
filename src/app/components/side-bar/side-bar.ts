@@ -54,6 +54,11 @@ export class SideBar {
       name: "Blogs",
       icon: "blogs.png",
       route: "/blogs"
+    },
+    {
+      name: "Tech Stack",
+      icon: "blogs.png",
+      route: "/tech-stack"
     }
   ]
 

@@ -133,6 +133,9 @@ export class HomePage {
       case 'certificates':
         this.router.navigate(['/certificates']);
         break;
+      case 'tech-stack':
+        this.router.navigate(['/tech-stack']);
+        break;
       default:
         break;
     }
