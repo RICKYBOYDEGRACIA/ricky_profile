@@ -7,6 +7,8 @@ export type TechStack = {
   path: string;
   alt: string;
   tooltip?: string;
+  details?: string;
+  years?: string;
 };
 
 export type Gear = {

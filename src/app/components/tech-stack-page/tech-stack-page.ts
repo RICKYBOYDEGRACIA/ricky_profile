@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Stack } from '../../data/common/tech-stack';
 
 @Component({
   imports: [],
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './tech-stack-page.css',
   templateUrl: './tech-stack-page.html',
 })
-export class TechStackPage {}
+export class TechStackPage {
+
+  techStack = Stack;
+  
+}
