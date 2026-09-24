@@ -1,7 +1,9 @@
-import { Component, output, signal } from '@angular/core';
+import { Component, OnInit, output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { SideBar } from "./components/side-bar/side-bar";
+import { injectSpeedInsights } from '@vercel/speed-insights';
+
 @Component({
   selector: 'app-root',
   imports: [
@@ -12,13 +14,16 @@ import { SideBar } from "./components/side-bar/side-bar";
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit {
   itemClicked = output<void>();
 
   constructor(
     public router: Router
   ) {
     
+  }
+  ngOnInit(): void{
+    injectSpeedInsights();
   }
   isMenuOpen = signal(false);
 
