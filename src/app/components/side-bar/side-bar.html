@@ -3,10 +3,12 @@
   <!-- Top Section (flex-1 forces it to take up all remaining height) -->
   <div class="flex-1 space-y-2">
     <!-- Desktop Title -->
-    <div 
+    <a 
+      routerLink="/"
+      (click)="itemClicked.emit()"
       class="hidden md:flex items-center cursor-pointer mb-8 hover:bg-active hover:text-active-text p-2 rounded-md font-medium transition-colors">
-      <span (click)="home()">Ricky Boy De Gracia</span>
-    </div>
+      <span>Ricky Boy De Gracia</span>
+    </a>
 
     @for (item of sideBarItems; track $index) {
       <a 

@@ -33,7 +33,7 @@ export class SideBar {
     {
       name: "Experience",
       icon: "experience.png",
-      route: "./experiences"
+      route: "/experiences"
     },
     {
       name: "Projects",

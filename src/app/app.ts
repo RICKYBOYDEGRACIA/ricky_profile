@@ -1,6 +1,6 @@
 import { Component, OnInit, output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { SideBar } from "./components/side-bar/side-bar";
 import { injectSpeedInsights } from '@vercel/speed-insights';
 
@@ -9,6 +9,7 @@ import { injectSpeedInsights } from '@vercel/speed-insights';
   imports: [
     CommonModule,
     RouterOutlet,
+    RouterLink,
     SideBar
 ],
   templateUrl: './app.html',

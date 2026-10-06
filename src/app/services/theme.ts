@@ -13,8 +13,11 @@ export class ThemeService {
   }
 
   private initTheme() {
+    if (typeof window === 'undefined' || typeof localStorage === 'undefined') {
+      return;
+    }
     const savedTheme = localStorage.getItem('theme') as Theme | null;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
     const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
     
     // Initial load without transition animation
@@ -63,11 +66,16 @@ export class ThemeService {
 
   setTheme(theme: Theme) {
     this.currentTheme.set(theme);
-    localStorage.setItem('theme', theme);
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('theme', theme);
+    }
     this.applyThemeClass(theme);
   }
 
   private applyThemeClass(theme: Theme) {
+    if (typeof document === 'undefined') {
+      return;
+    }
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
