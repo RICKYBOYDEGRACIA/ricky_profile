@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Experience, Gear } from '../../data/interfaces/common';
 import { Stack } from '../../data/common/tech-stack';
 import { experiences } from '../../data/common/experiences';
 import { Gears } from '../../data/common/gear';
 @Component({
-  imports: [],
+  imports: [RouterLink],
   selector: 'app-home-page',
   styleUrl: './home-page.css',
   templateUrl: './home-page.html',
