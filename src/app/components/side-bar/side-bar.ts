@@ -35,11 +35,11 @@ export class SideBar {
       icon: "experience.png",
       route: "/experiences"
     },
-    {
-      name: "Projects",
-      icon: "project.png",
-      route: "/projects"
-    },
+    // {
+    //   name: "Projects",
+    //   icon: "project.png",
+    //   route: "/projects"
+    // },
     // {
     //   name: "Certifications",
     //   icon: "certificate.png",
