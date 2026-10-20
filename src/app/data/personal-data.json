@@ -60,18 +60,18 @@
   "experience": [
     {
       "company": "reach52 (Singapore)",
-      "position": "Junior Engineer, Frontend",
+      "position": "Frontend Engineer, Fulltime | reach52 | Remote",
       "location": "Remote | Pasig, Philippines",
       "startDate": "2023-01",
       "endDate": "Present",
       "setup": "Full Time",
       "highlights": [
-        "Develop and maintain core frontend web applications supporting global health access digital platforms.",
-        "Implemented a custom UI component library using Angular and Tailwind CSS, standardizing reusable UI components across internal teams and speeding up development.",
-        "Leveraged AngularJS, React.js, and TypeScript to build responsive, accessible, and high-performance web user interfaces.",
-        "Integrated RESTful API services with Reactive Forms and custom validation pipelines to ensure seamless data synchronization across mobile and web environments.",
-        "Managed code repositories, version control, and sprint tasks using Bitbucket, Git, and Jira in an Agile development environment.",
-        "Collaborated in Jira/Bitbucket Agile sprints, performing peer code reviews and driving component-driven architecture best practices."
+        "Built a custom Angular and Tailwind CSS component library that replaced legacy Angular Material, standardizing reusable UI across teams and cutting component implementation time by 30%",
+        "Designed full-stack CRUD features with Node.js, Express.js and MongoDB, integrated into Angular frontends.",
+        "Integrated RESTful APIs with Reactive Forms and custom validation pipelines to keep data in sync across mobile and web.",
+        "Implemented i18n and localization architecture, translating forms and UI workflows into 5 languages for a global user base.",
+        "Built responsive, accessible, high-performance interfaces with AngularJS, React.js and Tailwind CSS.",
+        "Work in Agile sprints with Jira, Git and Bitbucket; perform peer code reviews and promote component-driven architecture."
       ],
       "stack": [
         "npm",
@@ -81,19 +81,22 @@
         "css",
         "git",
         "tailwind",
-        "bitbucket"
+        "bitbucket",
+        "MongoDB",
+        "Node.js",
+        "Express.js"
       ]
     },
     {
       "company": "reach52 (Singapore)",
-      "position": "Junior Engineer, Frontend",
+      "position": "Frontend Engineer, Intern | reach52 | Remote",
       "location": "Remote | Pasig, Philippines",
       "startDate": "2022-09",
       "endDate": "2022-12",
       "setup": "Intern",
       "highlights": [
-        "Assisted senior developers in building and bug-fixing frontend modules using HTML, CSS, JavaScript, and Bitbucket.",
-        "Implemented UI components and performed cross-browser testing to ensure optimal responsive design."
+        "Assisted senior developers in building and fixing frontend modules using HTML, CSS, JavaScript and Bitbucket.",
+        "Built UI components and ran cross-browser testing to ensure responsive design across devices."
       ],
       "stack": [
         "npm",
